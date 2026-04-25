@@ -1,0 +1,31 @@
+@layer utilities {
+  .animate-bottom-navbar-mobile {
+    animation: slideIcon 300ms both;
+  }
+
+  .slide-search-bar {
+    animation: slideSearchBar 300ms both;
+  }
+}
+
+@keyframes slideIcon {
+  from {
+    transform: translateY(5px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideSearchBar {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
