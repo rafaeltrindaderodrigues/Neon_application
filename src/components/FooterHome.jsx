@@ -7,7 +7,7 @@ export default function FooterHome() {
   const [activeTab, setActiveTab] = useState('');
   
   return(   
-    <footer className="w-full absolute bottom-0 bg-gray-500/20 border-t border-t-gray-500/60 rounded-t-md px-6 py-3 text-white">
+    <footer className="sm:hidden w-full absolute bottom-0 bg-gray-500/20 border-t border-t-gray-500/60 rounded-t-md px-6 py-3 text-white">
       {/* Div que abrange todos os icones e textos */}
       <div className="flex justify-between items-center">
         <div className="w-10 flex justify-center">

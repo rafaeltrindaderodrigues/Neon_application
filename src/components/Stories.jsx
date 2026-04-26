@@ -1,7 +1,7 @@
 import './Stories.css';
 
 export default function Stories() {
-  return <div className="px-6 flex items-center overflow-x-auto text-white space-x-5 no-scrollbar mb-4">
+  return <div className="px-6 flex items-center sm:justify-center overflow-x-auto text-white space-x-5 no-scrollbar mb-4">
     {/* Story */}
     <div className="flex flex-col items-center space-y-2">
       <div className="border border-(--primary-color) w-20 h-20 rounded-full flex items-center justify-center">

@@ -1,6 +1,6 @@
 export default function Box() {
   return(
-    <div className="bg-gray-700/10 p-4 rounded-lg border border-gray-600/80">
+    <div className="bg-gray-700/10 p-4 rounded-lg border border-gray-600/80 sm:w-[50%]">
       {/* post headline */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-5">
