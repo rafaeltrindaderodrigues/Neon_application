@@ -1,23 +1,24 @@
-import { useState } from "react";
+import { useState } from "react"
+import { Link } from "react-router-dom"
 import './FooterHome.css'
 
 export default function FooterHome() {
 
-  const [activeTab, setActiveTab] = useState('home');
+  const [activeTab, setActiveTab] = useState('');
   
   return(   
     <footer className="w-full absolute bottom-0 bg-gray-500/20 border-t border-t-gray-500/60 rounded-t-md px-6 py-3 text-white">
       {/* Div que abrange todos os icones e textos */}
       <div className="flex justify-between items-center">
         <div className="w-10 flex justify-center">
-          <button onClick={() => setActiveTab('home')} className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${activeTab === 'home' ? 'bg-(--primary-color) text-white' : ''}`}>  
+          <Link to={'/home'} onClick={() => setActiveTab('home')} className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${activeTab === 'home' ? 'bg-(--primary-color) text-white' : ''}`}>  
             <i className={`fa-solid fa-house ${activeTab === 'home' ? 'animate-bottom-navbar-mobile' : ''}`}></i>
-          </button>
+          </Link>
         </div>
         <div className="w-10 flex justify-center">
-          <button onClick={() => setActiveTab('message')} className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${activeTab === 'message' ? 'bg-(--primary-color) text-white' : ''}`}>
+          <Link to={'/messages'} onClick={() => setActiveTab('message')} className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${activeTab === 'message' ? 'bg-(--primary-color) text-white' : ''}`}>
             <i className={`fa-solid fa-message ${activeTab === 'message' ? 'animate-bottom-navbar-mobile' : ''}`}></i>
-          </button>
+          </Link>
         </div>
         <div className="w-10 flex justify-center">
           <button className="w-8 h-8 flex items-center justify-center text-xl bg-(--primary-color) text-white rounded-full cursor-pointer">
