@@ -5,7 +5,7 @@ export default function NavbarMobile() {
   const [searchActive, setSearchActive] = useState(false);
 
   return(
-    <nav className="w-full absolute top-0 bg-[#0e0e0e] border border-b-gray-500/60 flex justify-between items-center py-3 px-5">
+    <nav className="sm:hidden w-full absolute top-0 bg-[#0e0e0e] border border-b-gray-500/60 flex justify-between items-center py-3 px-5">
       <div className="flex items-center">
         <div className="absolute">
           <i className="fa-solid fa-search text-(--primary-color)" onClick={() => setSearchActive(!searchActive)}></i>

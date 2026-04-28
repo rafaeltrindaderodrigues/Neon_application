@@ -1,23 +1,24 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import './FooterHome.css'
 
 export default function FooterHome() {
 
-  const [activeTab, setActiveTab] = useState('');
+  const location = useLocation();
   
+  console.log(location)
+
   return(   
     <footer className="sm:hidden w-full absolute bottom-0 bg-gray-500/20 border-t border-t-gray-500/60 rounded-t-md px-6 py-3 text-white">
       {/* Div que abrange todos os icones e textos */}
       <div className="flex justify-between items-center">
         <div className="w-10 flex justify-center">
-          <Link to={'/home'} onClick={() => setActiveTab('home')} className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${activeTab === 'home' ? 'bg-(--primary-color) text-white' : ''}`}>  
-            <i className={`fa-solid fa-house ${activeTab === 'home' ? 'animate-bottom-navbar-mobile' : ''}`}></i>
+          <Link to={'/home'} className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${location.pathname === '/home' ? 'bg-(--primary-color) text-white' : ''}`}>  
+            <i className={`fa-solid fa-house ${location.pathname === '/home' ? 'animate-bottom-navbar-mobile' : ''}`}></i>
           </Link>
         </div>
         <div className="w-10 flex justify-center">
-          <Link to={'/messages'} onClick={() => setActiveTab('message')} className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${activeTab === 'message' ? 'bg-(--primary-color) text-white' : ''}`}>
-            <i className={`fa-solid fa-message ${activeTab === 'message' ? 'animate-bottom-navbar-mobile' : ''}`}></i>
+          <Link to={'/messages'} className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${location.pathname === '/messages' ? 'bg-(--primary-color) text-white' : ''}`}>
+            <i className={`fa-solid fa-message ${location.pathname === '/messages' ? 'animate-bottom-navbar-mobile' : ''}`}></i>
           </Link>
         </div>
         <div className="w-10 flex justify-center">
@@ -26,13 +27,13 @@ export default function FooterHome() {
           </button>
         </div>
         <div className="w-10 flex justify-center">
-          <button onClick={() => setActiveTab('bell')} className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${activeTab === 'bell' ? 'bg-(--primary-color) text-white' : ''}`}>
-            <i className={`fa-solid fa-bell ${activeTab === 'bell' ? 'animate-bottom-navbar-mobile' : ''}`}></i>
-          </button>
+          <Link to={'/notifications'} className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${location.pathname === '/notifications' ? 'bg-(--primary-color) text-white' : ''}`}>
+            <i className={`fa-solid fa-bell ${location.pathname === '/notifications' ? 'animate-bottom-navbar-mobile' : ''}`}></i>
+          </Link>
         </div>
         <div className="w-10 flex justify-center">
-          <button onClick={() => setActiveTab('user')} className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${activeTab === 'user' ? 'bg-(--primary-color) text-white' : ''}`}>
-            <i className={`fa-solid fa-user ${activeTab === 'user' ? 'animate-bottom-navbar-mobile' : ''}`}></i>
+          <button className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${location.pathname === 'user' ? 'bg-(--primary-color) text-white' : ''}`}>
+            <i className={`fa-solid fa-user ${location.pathname === 'user' ? 'animate-bottom-navbar-mobile' : ''}`}></i>
           </button>
         </div>
       </div>
